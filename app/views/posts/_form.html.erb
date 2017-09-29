@@ -1,0 +1,23 @@
+<p>
+<%= link_to (image_tag 'logo.png'), root_path %>
+</p>
+
+<%= form_for @post do |f| %>
+
+<p>タイトル<br>
+  <%= f.text_field :title %>
+</p>
+<p>記事内容<br>
+  <%= f.text_field :body %>
+</p>
+<% if request.path_info == new_post_path %>
+<p>
+  <%= f.submit 'Create' %>
+</p>
+<% else %>
+<p>
+  <%= f.submit 'Update' %>
+</p>
+<% end %>
+
+<% end %>
